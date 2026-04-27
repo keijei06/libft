@@ -6,11 +6,11 @@
 /*   By: joborges <joborges@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 19:40:31 by joborges          #+#    #+#             */
-/*   Updated: 2026/04/22 20:10:02 by joborges         ###   ########.fr       */
+/*   Updated: 2026/04/27 23:28:17 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 	{

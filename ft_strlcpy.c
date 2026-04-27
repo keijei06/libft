@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joborges <joborges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 11:44:03 by joborges          #+#    #+#             */
-/*   Updated: 2025/07/26 11:28:06 by joborges         ###   ########.fr       */
+/*   Created: 2026/04/27 21:42:41 by joborges          #+#    #+#             */
+/*   Updated: 2026/04/27 23:14:44 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strcpy(char *dest, char *src)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int	i;
-
+	size_t i;
+	
 	i = 0;
-	while (src[i] != '\0')
+	if (size > 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (i < size - 1 && src[i] != '\0')
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
-	dest[i] = src[i];
-	return (dest);
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }
-/*
-int	main(void)
-{
-	char	a[] = "abobora";
-	char	b[] = "curguete";
-
-	ft_strcpy(a, b);
-	printf("%s",a);
-}*/

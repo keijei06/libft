@@ -6,13 +6,11 @@
 /*   By: joborges <joborges@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 19:39:41 by joborges          #+#    #+#             */
-/*   Updated: 2026/04/22 19:52:39 by joborges         ###   ########.fr       */
+/*   Updated: 2026/04/27 23:27:59 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{

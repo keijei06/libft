@@ -1,46 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joborges <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 11:02:57 by joborges          #+#    #+#             */
-/*   Updated: 2025/07/25 10:06:18 by joborges         ###   ########.fr       */
+/*   Updated: 2026/04/27 23:24:02 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
-char	*ft_strupcase(char *str)
-{
-	char	*orig;
-
-	orig = str;
-	while (*str)
+int	ft_toupper(int c)
+{	
+	if (c >= 'a' && c <= 'z')
 	{
-		if (*str >= 'a' && *str <= 'z')
-		{
-			*str = *str - 32;
-		}
-		str++;
+		c = c - 32;
 	}
-	return (orig);
+	return (c);
 }
-/*
-int main(void)
-{
-        char a[] = "masqueico";
-        char b[] = "aboBora";
-        char c[] = "aran co";
-        char d[] = "aanha2";
-        char e[] = "";
-
-        printf("%s\n",ft_strupcase(a));
-        printf("%s\n",ft_strupcase(b));
-        printf("%s\n",ft_strupcase(c));
-        printf("%s\n",ft_strupcase(d));
-        printf("%s\n",ft_strupcase(e));
-
-        return 0;
-}*/
