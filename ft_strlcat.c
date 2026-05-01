@@ -6,7 +6,7 @@
 /*   By: joborges <joborges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 21:27:52 by joborges          #+#    #+#             */
-/*   Updated: 2026/04/29 22:26:08 by joborges         ###   ########.fr       */
+/*   Updated: 2026/04/29 23:15:37 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	j;
 	size_t	dst_len;
 	size_t	src_len;
-	
+
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	if (size == dst_len)
-		return(size + src_len);
-	
+	if (size <= dst_len)
+		return (size + src_len);
 	i = dst_len;
 	j = 0;
 	while (src[j] && (i + 1) < size)
@@ -33,6 +32,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		j++;
 	}
 	dst[i] = '\0';
-	return(dst_len + src_len);
+	return (dst_len + src_len);
 }
-

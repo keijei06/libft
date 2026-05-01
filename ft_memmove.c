@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joborges <joborges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/27 21:42:41 by joborges          #+#    #+#             */
-/*   Updated: 2026/04/29 23:16:08 by joborges         ###   ########.fr       */
+/*   Created: 2026/04/29 22:48:59 by joborges          #+#    #+#             */
+/*   Updated: 2026/04/29 23:19:41 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	unsigned char		*ds;
+	unsigned const char	*sr;
 
-	i = 0;
-	if (size > 0)
+	if (!dst && !src)
+		return (NULL);
+	ds = (unsigned char *)dst;
+	sr = (unsigned const char *)src;
+	if (ds > sr)
 	{
-		while (i < size - 1 && src[i] != '\0')
+		while (n--)
 		{
-			dest[i] = src[i];
-			i++;
+			ds[n] = sr[n];
 		}
-		dest[i] = '\0';
 	}
-	while (src[i] != '\0')
-		i++;
-	return (i);
+	else
+	{
+		while (n--)
+			*ds++ = *sr++;
+	}
+	return (dst);
 }
