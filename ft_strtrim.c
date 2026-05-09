@@ -14,9 +14,9 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	j;
-	int	i_alloc;
+	int		i;
+	int		j;
+	int		i_alloc;
 	char	*alloc;
 
 	i = 0;
@@ -37,4 +37,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	alloc[i_alloc] = '\0';
 	return (alloc);
-}	
+}
