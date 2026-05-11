@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joborges <joborges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 21:27:52 by joborges          #+#    #+#             */
-/*   Updated: 2026/05/11 22:14:11 by joborges         ###   ########.fr       */
+/*   Created: 202605/10 12:43:30 by joborges          #+#    #+#             */
+/*   Updated: 2026/05/10 12:54:24 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	j;
-	size_t	dst_len;
-	size_t	src_len;
+	char	*str;
+	size_t	s_len;
 
-	dst_len = 0;
-	src_len = ft_strlen(src);
-	while (dst_len < size && dst[dst_len] != '\0')
-		dst_len++;
-	if (size == dst_len)
-		return (size + src_len);
-	i = dst_len;
-	j = 0;
-	while (src[j] && (i + 1) < size)
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (dst_len + src_len);
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	ft_memcpy(str, s + start, len);
+	str[len] = '\0';
+	return (str);
 }
