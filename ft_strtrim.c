@@ -6,7 +6,7 @@
 /*   By: joborges <joborges@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 15:20:36 by joborges          #+#    #+#             */
-/*   Updated: 2026/05/09 16:15:53 by joborges         ###   ########.fr       */
+/*   Updated: 2026/05/12 22:20:30 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	int		i_alloc;
 	char	*alloc;
-
+	
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
 	i_alloc = 0;
 	j = ft_strlen(s1) - 1;
