@@ -6,7 +6,7 @@
 /*   By: joborges <joborges@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 21:45:40 by joborges          #+#    #+#             */
-/*   Updated: 2026/05/12 21:51:59 by joborges         ###   ########.fr       */
+/*   Updated: 2026/05/15 17:18:09 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
-	
+
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		write(fd, &s[i], 1);
 		i++;
 	}
-	
 }

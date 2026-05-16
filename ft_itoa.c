@@ -6,7 +6,7 @@
 /*   By: joborges <joborges@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 18:48:17 by joborges          #+#    #+#             */
-/*   Updated: 2026/05/11 22:08:32 by joborges         ###   ########.fr       */
+/*   Updated: 2026/05/15 17:22:22 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	count_digits(long n)
 {
-	int count;
-	
+	int	count;
+
 	count = 0;
 	if (n <= 0)
 		count = 1;
@@ -24,14 +24,14 @@ static int	count_digits(long n)
 		n = n / 10;
 		count++;
 	}
-	return (count);		
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
 	long	num;
-	int	len;
-	char  	*str;
+	int		len;
+	char	*str;
 
 	num = (long)n;
 	len = count_digits(num);

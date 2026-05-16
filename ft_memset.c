@@ -6,7 +6,7 @@
 /*   By: joborges <joborges@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/25 12:56:29 by joborges          #+#    #+#             */
-/*   Updated: 2026/04/27 22:58:01 by joborges         ###   ########.fr       */
+/*   Updated: 2026/05/15 19:37:19 by joborges         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*tmp;
-
+	
 	tmp = (unsigned char *)b;
 	while (len > 0)
 	{
